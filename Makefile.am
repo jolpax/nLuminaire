@@ -1,6 +1,10 @@
 AUTOMAKE_OPTIONS = foreign
 
 CFLAGS = -Wall -pedantic -O2
+CFLAGS += -std=gnu99
+CFLAGS += $(OPT)
+CFLAGS += -Wextra -Wno-stringop-truncation $(DEBUG) -fPIC
+
 include_HEADERS = pwm.h
 
 lib_LTLIBRARIES = libpwm.la
