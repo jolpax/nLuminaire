@@ -11,7 +11,7 @@ include_HEADERS += bbexample.h
 
 
 lib_LTLIBRARIES = libpwm.la
-libpwm_la_SOURCES  = pwmlib.c bbexamplelib.c
+libpwm_la_SOURCES  = pwmlib.c
 libpwm_la_SOURCES  += bbexamplelib.c
 libpwm_la_LDFLAGS= -version-info 1:0:0
 
