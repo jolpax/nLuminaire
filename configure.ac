@@ -3,9 +3,9 @@
 
 #AC_PREREQ(2.60)
 AC_INIT(bbexample, 0.1, jb2.metrix@gmail.com)
-AC_CONFIG_SRCDIR([app-pwm.c])
+AC_CONFIG_SRCDIR([apppwm.c])
 AC_CONFIG_HEADER([config.h])
-AM_INIT_AUTOMAKE(app-pwm, main)
+AM_INIT_AUTOMAKE(apppwm, main)
 
 # Checks for programs.
 AC_PROG_CC
