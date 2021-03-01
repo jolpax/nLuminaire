@@ -9,22 +9,22 @@ int main(void) {
 
     pwm = pwm_new();
     
-    printf("Hello, World!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+    printf("Cabsy Luminaire Started!!!\n");
 
     /* Open PWM chip 0, channel 10 */
-    if (pwm_open(pwm, 0, 10) < 0) {
+    if (pwm_open(pwm, 0, 3) < 0) {
         fprintf(stderr, "pwm_open(): %s\n", pwm_errmsg(pwm));
         exit(1);
     }
 
     /* Set frequency to 1 kHz */
-    if (pwm_set_frequency(pwm, 1e3) < 0) {
+    if (pwm_set_frequency(pwm, 10000) < 0) {
         fprintf(stderr, "pwm_set_frequency(): %s\n", pwm_errmsg(pwm));
         exit(1);
     }
 
     /* Set duty cycle to 75% */
-    if (pwm_set_duty_cycle(pwm, 0.75) < 0) {
+    if (pwm_set_duty_cycle(pwm, 0.5) < 0) {
         fprintf(stderr, "pwm_set_duty_cycle(): %s\n", pwm_errmsg(pwm));
         exit(1);
     }
@@ -36,7 +36,7 @@ int main(void) {
     }
 
     /* Change duty cycle to 50% */
-    if (pwm_set_duty_cycle(pwm, 0.50) < 0) {
+    if (pwm_set_duty_cycle(pwm, 0.70) < 0) {
         fprintf(stderr, "pwm_set_duty_cycle(): %s\n", pwm_errmsg(pwm));
         exit(1);
     }
