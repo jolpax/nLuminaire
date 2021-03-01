@@ -15,7 +15,7 @@ libpwm_la_SOURCES  = pwmlib.c
 libpwm_la_SOURCES  += bbexamplelib.c
 libpwm_la_LDFLAGS= -version-info 1:0:0
 
-bin_PROGRAMS = apppwm
+bin_PROGRAMS = apppwm comapps
 apppwm_SOURCES = apppwm.c
 apppwm_SOURCES = comapps.c
 apppwm_LDADD = libpwm.la
