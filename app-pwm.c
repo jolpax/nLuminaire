@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include "pwm.h"
-#include "i2c.h"
+
 
 int main(void) {
     pwm_t *pwm;
