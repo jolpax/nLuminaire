@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "pwm.h"
+#include "bbexample.h"
 
 
 int main(void) {
@@ -10,6 +11,7 @@ int main(void) {
     pwm = pwm_new();
     
     printf("Cabsy Luminaire Started!!!\n");
+    LibHelloWorld();
 
     /* Open PWM chip 0, channel 10 */
     if (pwm_open(pwm, 0, 3) < 0) {

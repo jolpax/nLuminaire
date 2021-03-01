@@ -7,6 +7,7 @@ CFLAGS += -Wextra -Wno-stringop-truncation $(DEBUG) -fPIC
 
 
 include_HEADERS = pwm.h
+include_HEADERS = bbexample.h
 
 
 lib_LTLIBRARIES = libpwm.la
