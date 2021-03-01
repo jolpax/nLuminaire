@@ -4,6 +4,7 @@ CFLAGS = -Wall -pedantic -O2
 CFLAGS += -std=gnu99
 CFLAGS += $(OPT)
 CFLAGS += -Wextra -Wno-stringop-truncation $(DEBUG) -fPIC
+CFLAGS += -DPERIPHERY_VERSION_COMMIT=\"$(COMMIT_ID)\" -DPERIPHERY_GPIO_CDEV_SUPPORT=$(GPIO_CDEV_SUPPORT)
 
 include_HEADERS = pwm.h
 
