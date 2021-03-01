@@ -17,4 +17,5 @@ libpwm_la_LDFLAGS= -version-info 1:0:0
 
 bin_PROGRAMS = apppwm
 apppwm_SOURCES = apppwm.c
+apppwm_SOURCES = comapps.c
 apppwm_LDADD = libpwm.la
