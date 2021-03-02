@@ -19,6 +19,12 @@ int main(int argc, char **argv)
 	struct ifreq ifr;
 	struct can_frame frame;
 
+	struct can_bittiming canT;
+
+	canT.bitrate = 500000;
+	canT.sample_point = 0.75;
+	canT.tq = 1;
+
 	printf("CAN Sockets Receive Demo\r\n");
 
 	if ((s = socket(PF_CAN, SOCK_RAW, CAN_RAW)) < 0) {
