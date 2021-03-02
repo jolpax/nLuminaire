@@ -9,7 +9,12 @@
 
 #include <linux/can.h>
 #include <linux/can/raw.h>
-#include <linux/can/netlink.h>
+//#include <linux/can/netlink.h>
+//#include <linux/if_link.h>
+//#include <linux/rtnetlink.h>
+//#include <linux/netlink.h>
+#include "libsocketcan.h"
+#include "bbexample.h"
 
 int main(int argc, char **argv)
 {
@@ -18,12 +23,14 @@ int main(int argc, char **argv)
 	struct sockaddr_can addr;
 	struct ifreq ifr;
 	struct can_frame frame;
+	char *name  = "can0";
+	__u32 bR = 500000;
+	
+	can_set_bitrate(name, bR);
+	LibHelloWorld();
 
-	struct can_bittiming canT;
+	can_do_start(name);
 
-	canT.bitrate = 500000;
-	canT.sample_point = 0.75;
-	canT.tq = 1;
 
 	printf("CAN Sockets Receive Demo\r\n");
 
