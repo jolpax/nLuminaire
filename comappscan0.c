@@ -53,18 +53,20 @@ int main(int argc, char **argv)
 	}
 
 	nbytes = read(s, &frame, sizeof(struct can_frame));
-
+printf("0\r\n");
  	if (nbytes < 0) {
 		perror("Read");
 		return 1;
 	}
-
+printf("1\r\n");
 	printf("0x%03X [%d] ",frame.can_id, frame.can_dlc);
 
 	for (i = 0; i < frame.can_dlc; i++)
 		printf("%02X ",frame.data[i]);
 
 	printf("\r\n");
+
+	printf("2\r\n");
 
 	if (close(s) < 0) {
 		perror("Close");
