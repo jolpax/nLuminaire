@@ -9,6 +9,7 @@
 
 #include <linux/can.h>
 #include <linux/can/raw.h>
+#include <linux/can/netlink.h>
 
 int main(int argc, char **argv)
 {
