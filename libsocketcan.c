@@ -23,7 +23,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-#include "libsocketcan_config.h"
+//#include "libsocketcan_config.h"
 #endif
 
 #include <stdio.h>
