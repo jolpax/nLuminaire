@@ -16,15 +16,18 @@
 #include "libsocketcan.h"
 #include "bbexample.h"
 
-int main(int argc, char **argv)
-{
-	int s, i; 
+
+int s, i; 
 	int nbytes;
 	struct sockaddr_can addr;
 	struct ifreq ifr;
 	struct can_frame frame;
 	char *name  = "can0";
 	__u32 bR = 500000;
+
+int main(int argc, char **argv)
+{
+	
 	
 	can_set_bitrate(name, bR);
 	LibHelloWorld();
@@ -52,13 +55,35 @@ int main(int argc, char **argv)
 		return 1;
 	}
 
+	while(1)
+	{
+		readCan();
+
+	}
+
+	
+
+	return 0;
+}
+
+
+int readCan(void)
+{
+	
+
 	nbytes = read(s, &frame, sizeof(struct can_frame));
-printf("0\r\n");
+
+	
+ 	if (nbytes == 0) {
+		
+		return 1;
+	}
+    
  	if (nbytes < 0) {
 		perror("Read");
 		return 1;
 	}
-printf("1\r\n");
+
 	printf("0x%03X [%d] ",frame.can_id, frame.can_dlc);
 
 	for (i = 0; i < frame.can_dlc; i++)
@@ -66,13 +91,13 @@ printf("1\r\n");
 
 	printf("\r\n");
 
-	printf("2\r\n");
+	//if (close(s) < 0) {
+	//	perror("Close");
+    //		return 1;
+//	}
+return 1;
 
-	if (close(s) < 0) {
-		perror("Close");
-		return 1;
-	}
-
-	return 0;
 }
+
+
 
