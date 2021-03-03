@@ -6,7 +6,7 @@
 
 
 
-struct luminaireData
+static struct luminaireData
 {
     uint8_t swtx[8];
 
@@ -19,4 +19,4 @@ struct luminaireData
 
 int readCan(void);
 
-extern struct luminaireData nData;
+static struct luminaireData nData;
