@@ -19,4 +19,4 @@ struct luminaireData
 
 int readCan(void);
 
-struct luminaireData nData;
+extern struct luminaireData nData;

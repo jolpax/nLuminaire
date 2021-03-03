@@ -32,7 +32,7 @@ int main(void) {
     }
 
     /* Set duty cycle to 75% */
-    if (pwm_set_duty_cycle(pwm, pulse) < 0) {
+    if (pwm_set_duty_cycle(pwm, 0.5) < 0) {
         fprintf(stderr, "pwm_set_duty_cycle(): %s\n", pwm_errmsg(pwm));
         exit(1);
     }
@@ -70,9 +70,3 @@ int main(void) {
     return 0;
 }
 
-int changeDuty(void){
-
-    
-
-    return 1;
-}
