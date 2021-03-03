@@ -15,6 +15,7 @@
 //#include <linux/netlink.h>
 #include "libsocketcan.h"
 #include "bbexample.h"
+#include "nluminaire.h"
 
 
 int s, i; 
@@ -87,14 +88,15 @@ int readCan(void)
 	printf("0x%03X [%d] ",frame.can_id, frame.can_dlc);
 
 	for (i = 0; i < frame.can_dlc; i++)
+	{
 		printf("%02X ",frame.data[i]);
+		
+		nData.swtx[i] = frame.data[i];
+	}
+
 
 	printf("\r\n");
 
-	//if (close(s) < 0) {
-	//	perror("Close");
-    //		return 1;
-//	}
 return 1;
 
 }

@@ -4,12 +4,18 @@
 #include "pwm.h"
 #include "bbexample.h"
 
-
-int main(void) {
+#include "nluminaire.h"
     pwm_t *pwm;
 
-    pwm = pwm_new();
+    double pulse = 0;
+    double prevpulse = 0;
     
+    
+
+int main(void) {
+
+    pwm = pwm_new();
+
     printf("Cabsy Luminaire Started!!!\n");
     LibHelloWorld();
 
@@ -26,7 +32,7 @@ int main(void) {
     }
 
     /* Set duty cycle to 75% */
-    if (pwm_set_duty_cycle(pwm, 0.5) < 0) {
+    if (pwm_set_duty_cycle(pwm, pulse) < 0) {
         fprintf(stderr, "pwm_set_duty_cycle(): %s\n", pwm_errmsg(pwm));
         exit(1);
     }
@@ -37,15 +43,36 @@ int main(void) {
         exit(1);
     }
 
-    /* Change duty cycle to 50% */
-    if (pwm_set_duty_cycle(pwm, 0.70) < 0) {
-        fprintf(stderr, "pwm_set_duty_cycle(): %s\n", pwm_errmsg(pwm));
-        exit(1);
+    
+
+    while (1)
+    {
+
+        pulse = (nData.swtx[2]/471);
+
+
+        if(prevpulse != pulse)
+            {
+                if (pwm_set_duty_cycle(pwm, pulse) < 0) 
+                    {
+                    fprintf(stderr, "pwm_set_duty_cycle(): %s\n", pwm_errmsg(pwm));
+                    exit(1);
+                    }
+                prevpulse = pulse;           
+            }
+      
     }
 
-    pwm_close(pwm);
+    //pwm_close(pwm);
 
-    pwm_free(pwm);
+    //pwm_free(pwm);
 
     return 0;
+}
+
+int changeDuty(void){
+
+    
+
+    return 1;
 }

@@ -10,6 +10,8 @@ include_HEADERS = pwm.h
 include_HEADERS += bbexample.h
 include_HEADERS += libsocketcan.h
 include_HEADERS += can_netlink.h
+include_HEADERS += nluminaire.h
+
 
 
 
